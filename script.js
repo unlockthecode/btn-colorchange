@@ -9,7 +9,13 @@ button.addEventListener('click', function() {
     button.style.color = randomColor();
 });
 
+
+// Helper function to generate a random number between 0 and 255
+function randomNumber255(){
+    return Math.round(Math.random() * 255);
+}
+
 // Make the random color generator a function to reuse 
 function randomColor(){
-    return `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
+    return `rgb(${randomNumber255()}, ${randomNumber255()}, ${randomNumber255()})`;
 }
