@@ -53,16 +53,16 @@ function dynamicTextColor(){
 
 function randomTextColor(){
     if (dynamicTextColor() == "light"){
-        // Generate dark random color
-        let darkR = randomNumber255() * 0.5;
-        let darkG = randomNumber255() * 0.5;
-        let darkB = randomNumber255() * 0.5;
+        // Generate dark random color (extreme range to ensure darkness)
+        let darkR = randomNumber255() * 0.3;
+        let darkG = randomNumber255() * 0.3;
+        let darkB = randomNumber255() * 0.3;
         return `rgb(${darkR}, ${darkG}, ${darkB})`;
     }else{
-        // Generate light random color
-        let lightR = 128 + randomNumber255() * 0.5;
-        let lightG = 128 + randomNumber255() * 0.5;
-        let lightB = 128 + randomNumber255() * 0.5;
+        // Generate light random color (extreme range to ensure lightness)
+        let lightR = 175 + randomNumber255() * 0.3;
+        let lightG = 175 + randomNumber255() * 0.3;
+        let lightB = 175 + randomNumber255() * 0.3;
         return `rgb(${lightR}, ${lightG}, ${lightB})`;
     }
 }
