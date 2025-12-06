@@ -5,8 +5,18 @@ const button = document.getElementById('btn-main');
 // Listener for click event so it changes the color randomly
 button.addEventListener('click', function() {
     // Generate random RGB color
-    button.style.backgroundColor = randomColor();
-    button.style.color = randomTextColor();
+    
+    
+    // button.style.backgroundColor = randomColor();
+    // button.style.color = randomTextColor();
+
+    // Loop 10x to create a rainbow effect
+    for(let i = 0; i<= 10; i++){
+        setTimeout(function() {
+            button.style.backgroundColor = randomColor();
+            button.style.color = randomTextColor();
+        }, i * 250); // Delay increases per iteration
+    }
 });
 
 
@@ -52,3 +62,15 @@ function randomTextColor(){
         return `rgb(${lightR}, ${lightG}, ${lightB})`;
     }
 }
+
+// Dark Mode Toggle Button
+const buttonDarkMode = document.getElementById('btn-darkmode');
+
+buttonDarkMode.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    // IF ELSE STATEMENT TO TOGGLE ICON, BASICALLY IF MOON SET TO SUN, ELSE SET TO MOON 
+    buttonDarkMode.textContent = buttonDarkMode.textContent === "🌙" ? "☀️" : "🌙";
+});
+
+// Start with Dark Mode
+buttonDarkMode.click();

@@ -10,8 +10,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: black;
+            background-color: white;
         }
+        body.dark-mode {
+            background-color: #121212;
+        }
+        
         #btn-main {
             padding: 150px 250px;
             font-size: 200px;
@@ -19,10 +23,22 @@
             border: none;
             cursor: pointer;
         }
+
+        #btn-darkmode {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
-    <button id="btn-main">Click Me</button>
+    <button id="btn-main">CLICK ME</button>
+    <button id="btn-darkmode">🌙</button>
     <script src="script.js"></script>
 </body>
 </html>
