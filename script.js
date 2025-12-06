@@ -23,6 +23,27 @@ buttonSpam.addEventListener('click', function(){
     }
 })
 
+// Defining the loop button 
+const buttonLoop = document.getElementById('btn-loop');
+
+// Listener for click event to change the color continuously
+let loopInterval; // Variable to hold the interval ID
+buttonLoop.addEventListener('click', function(){
+    // If loop is already running, stop it
+    if(loopInterval){ // if there is a loop interval running
+        clearInterval(loopInterval); // Clear the interval to stop the loop
+        loopInterval = null; // Reset the interval variable
+        buttonLoop.textContent = "🔁"; // change icon back to loop 
+    } else {
+        // Start a new interval to change colors every 500ms
+        loopInterval = setInterval(function() {
+            button.style.backgroundColor = randomColor();
+            button.style.color = randomTextColor();
+        }, 250); // 500 ms? 
+        buttonLoop.textContent = "🛑"; // change icon to stop 
+    }
+});
+
 
 // Global RGB values
 let r, g, b;

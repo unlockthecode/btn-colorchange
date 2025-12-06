@@ -24,34 +24,42 @@
             cursor: pointer;
         }
 
-        #btn-darkmode {
+        .top-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: absolute;
             top: 30px;
-            right: 30px;
-            font-size: 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 0 30px;
+            box-sizing: border-box;
+            pointer-events: none;
         }
-
-        #btn-spam {
-            position: absolute;
-            top: 30px;
-            left: 30px;
+        .top-buttons button {
             font-size: 30px;
             background: none;
             border: none;
             cursor: pointer;
+            pointer-events: auto;
         }
 
         /* RESIZING VIA MEDIA QUERIES */
         @media (max-width: 1200px) {
             #btn-main {
-                padding: 100px 200px;
-                font-size: 150px;
+                padding: 80px 165px;
+                font-size: 120px;
             }
         }
-        
+
+        @media (max-width: 800px) {
+            #btn-main {
+                padding: 60px 125px;
+                font-size: 90px;
+            }
+        }
+
         @media (max-width: 600px) {
             #btn-main {
                 padding: 40px 85px;
@@ -62,9 +70,12 @@
     </style>
 </head>
 <body>
+    <div class="top-buttons">
+        <button id="btn-spam">💥</button>
+        <button id="btn-loop" aria-label="Loop">🔁</button>
+        <button id="btn-darkmode">🌙</button>
+    </div>
     <button id="btn-main">CLICK ME</button>
-    <button id="btn-spam">💥</button>
-    <button id="btn-darkmode">🌙</button>
     <script src="script.js"></script>
 </body>
 </html>
