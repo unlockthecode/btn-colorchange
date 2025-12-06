@@ -6,7 +6,6 @@ const button = document.getElementById('btn-main');
 button.addEventListener('click', function() {
     // Generate random RGB color
     
-    
     // button.style.backgroundColor = randomColor();
     // button.style.color = randomTextColor();
 
