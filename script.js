@@ -5,18 +5,23 @@ const button = document.getElementById('btn-main');
 // Listener for click event so it changes the color randomly
 button.addEventListener('click', function() {
     // Generate random RGB color
-    
-    // button.style.backgroundColor = randomColor();
-    // button.style.color = randomTextColor();
+    button.style.backgroundColor = randomColor();
+    button.style.color = randomTextColor();
+});
 
-    // Loop 10x to create a rainbow effect
-    for(let i = 0; i<= 10; i++){
+// Defining the spam button 
+const buttonSpam = document.getElementById('btn-spam');
+
+// Listener for click event to change the color rapidly
+buttonSpam.addEventListener('click', function(){
+    // Loop 5x to create a rainbow effect
+    for(let i = 0; i<= 5; i++){
         setTimeout(function() {
             button.style.backgroundColor = randomColor();
             button.style.color = randomTextColor();
         }, i * 250); // Delay increases per iteration
     }
-});
+})
 
 
 // Global RGB values
