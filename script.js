@@ -6,7 +6,7 @@ const button = document.getElementById('btn-main');
 button.addEventListener('click', function() {
     // Generate random RGB color
     button.style.backgroundColor = randomColor();
-    button.style.color = dynamicTextColor();
+    button.style.color = randomTextColor();
 });
 
 
@@ -28,10 +28,27 @@ function randomColor(){
 
 // Brightness Calculation function
 function brightness(r, g, b) {
+    // standard relative luminance formula
     return Math.round(((r * 299) + (g * 587) + (b * 114)) / 1000);
 }
 
 function dynamicTextColor(){
-    // return white or black if brightness, passing along rgb values is less than or greater than 128
-    return brightness(r, g, b) < 128 ? 'white' : 'black';
+    // return light or dark if brightness, passing along rgb values is less than or greater than 128
+    return brightness(r, g, b) < 128 ? 'light' : 'dark';
+}
+
+function randomTextColor(){
+    if (dynamicTextColor() == "light"){
+        // Generate dark random color
+        let darkR = randomNumber255() * 0.5;
+        let darkG = randomNumber255() * 0.5;
+        let darkB = randomNumber255() * 0.5;
+        return `rgb(${darkR}, ${darkG}, ${darkB})`;
+    }else{
+        // Generate light random color
+        let lightR = 128 + randomNumber255() * 0.5;
+        let lightG = 128 + randomNumber255() * 0.5;
+        let lightB = 128 + randomNumber255() * 0.5;
+        return `rgb(${lightR}, ${lightG}, ${lightB})`;
+    }
 }
